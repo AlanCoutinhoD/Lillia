@@ -31,7 +31,7 @@
             <Font name="Bell MT" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="-7.0" layoutY="209.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="178.0" style="-fx-background-color: #117B40;" text="SECCION C" textFill="WHITE">
+      <Button fx:id="btn_seccionC" layoutX="-7.0" layoutY="209.0" mnemonicParsing="false" onMouseClicked="#btnSeccionCOnMouseClicked" prefHeight="45.0" prefWidth="178.0" style="-fx-background-color: #117B40;" text="SECCION C" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="18.0" />
          </font>
@@ -55,6 +55,11 @@
       <Line endX="100.0" endY="13.0" layoutX="70.0" layoutY="106.0" startX="-69.0" startY="13.0" stroke="WHITE" />
       <Line endX="100.0" endY="13.0" layoutX="70.0" layoutY="241.0" startX="-69.0" startY="13.0" stroke="WHITE" />
       <Button id="btnAnadir" fx:id="btnBuscar" layoutX="17.0" layoutY="255.0" mnemonicParsing="false" onMouseClicked="#btnBuscarOnMouseClicked" prefHeight="45.0" prefWidth="137.0" style="-fx-background-color: #13CE66;" text="BUSCAR" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Button>
+      <Button id="btnAnadir" fx:id="btnAnadirAcuatica" layoutX="385.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#btnAnadirAcuaticaOnMouseClicked" prefHeight="45.0" prefWidth="200.0" style="-fx-background-color: #13CE66;" text="AÑADIR ACUATICA" textFill="WHITE">
          <font>
             <Font name="Bell MT" size="18.0" />
          </font>

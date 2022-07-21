@@ -85,6 +85,46 @@ public class Archivo {
             JOptionPane.showMessageDialog(null,"Error Archivo");
         }
         return ListaPlantasB;}
+    public  ArrayList<Acuatica> leerC(){
+        ArrayList<Acuatica> ListaPlantasC = new ArrayList<>();
+        try {
+            BufferedReader entrada= new BufferedReader(new FileReader("ListaPlantasC.txt"));
+            String s,s2 = new String();
+            String nombre;
+            int id;
+            int cantidad;
+            String tipo;
+            while ((s= entrada.readLine())!=null){
+                s2+=s+ "\n";
+                String[] information = s.split("-");
+                nombre= information[0];
+                id= Integer.parseInt(information[1]);
+                tipo= information[2];
+                cantidad= Integer.parseInt(information[3]);
+                Acuatica objPlanta = new Acuatica(id,nombre,tipo,cantidad);
+                ListaPlantasC.add(objPlanta);
+
+            }
+
+            entrada.close();
+        }catch (java.io.IOException e){
+            JOptionPane.showMessageDialog(null,"Error Archivo");
+        }
+        return ListaPlantasC;}
+    public void escribirC(ArrayList<Acuatica>PlantasC){
+        PrintWriter salida= null;
+        try {
+            salida = new PrintWriter(new BufferedWriter(new FileWriter("ListaPlantasC.txt")));
+            for (int i=0; i< PlantasC.size(); i++){
+                salida.println(PlantasC.get(i).getNombre() + "-" + PlantasC.get(i).getId()+ "-"+PlantasC.get(i).getTipo()+"-"+ PlantasC.get(i).getCantidad());
+            }
+            salida.close();
+        }catch (IOException ex){
+            JOptionPane.showMessageDialog(null,"Error");
+        } finally {
+            salida.close();
+        }
+    }
 
     public  ArrayList<Horario> leerHorario(){
         ArrayList<Horario> ListaHorario = new ArrayList<Horario>();

@@ -1,5 +1,6 @@
 package com.upchiapas.lillia.controllers;
 import com.upchiapas.lillia.Vivero;
+import com.upchiapas.lillia.models.Acuatica;
 import com.upchiapas.lillia.models.Archivo;
 import com.upchiapas.lillia.models.Planta;
 import javafx.fxml.FXML;
@@ -19,13 +20,17 @@ public class InventarioController extends javax.swing.JFrame {
     Archivo objArchivo = new Archivo();
     ArrayList<Planta> ListaPlantas = new ArrayList<>();
     ArrayList<Planta> ListaPlantasB = new ArrayList<>();
+    ArrayList<Acuatica>ListaPlantasC=new ArrayList<>();
 
     public InventarioController() {
         ListaPlantas = objArchivo.leer();
         ListaPlantasB = objArchivo.leerB();
+        ListaPlantasC= objArchivo.leerC();
         setLocationRelativeTo(null);
     }
 
+    @FXML
+    private Button btnAnadirAcuatica;
     @FXML
     private Text lblInventario;
     @FXML
@@ -36,13 +41,40 @@ public class InventarioController extends javax.swing.JFrame {
     private Button btnAnadir;
     @FXML
     private Button btnBuscar;
+    @FXML
+    private Button btn_seccionC;
 
     @FXML
     private TextArea txtArPlantas;
     @FXML
+    private Button btnSalir;
+    @FXML
     void btnBuscarOnMouseClicked(MouseEvent event) {
         Vivero.setFXML("busqueda","Busqueda");
 
+    }
+    @FXML
+    void btnSeccionCOnMouseClicked(MouseEvent event) {
+        lblInventario.setText("INVENTARIO SECCION C");
+        Acuatica aux;
+        for (int i = 0; i < ListaPlantasC.size() - 1; i++) {
+            for (int j = 0; j < ListaPlantasC.size() - 1; j++) {
+                if (ListaPlantasC.get(j).getId() > ListaPlantasC.get(j + 1).getId()) {
+                    aux = ListaPlantasC.get(j);
+                    ListaPlantasC.set(j, ListaPlantasC.get(j + 1));
+                    ListaPlantasC.set(j + 1, aux);
+                }
+            }
+        }
+        String msj = "";
+        txtArPlantas.setText("ID          Nombre       Cantidad");
+        for (int i = 0; i < ListaPlantasC.size(); i++) {
+            Planta planta = ListaPlantasC.get(i);
+            msj += planta.toString();
+        }
+        txtArPlantas.appendText(msj);
+        txtArPlantas.setWrapText(true);
+        txtArPlantas.setEditable(false);
     }
 
         @FXML
@@ -90,6 +122,11 @@ public class InventarioController extends javax.swing.JFrame {
             objArchivo.escribirB(ListaPlantasB);
         }
     }
+    @FXML
+    void btnAnadirAcuaticaOnMouseClicked(MouseEvent event) {
+Vivero.setFXML("anadirPlantaAcuatica","AÑADIR PLANTA ACUATICA");
+    }
+
 
     @FXML
     void btn_seccionBOnMouseClicked(MouseEvent event) {
