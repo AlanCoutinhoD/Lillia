@@ -18,7 +18,7 @@ public class HomeController {
 
     @FXML
     void btn_horarioOnMouseClicked(MouseEvent event) {
-
+Vivero.setFXML("horarioRiego","Horario De Riego");
     }
 
     @FXML

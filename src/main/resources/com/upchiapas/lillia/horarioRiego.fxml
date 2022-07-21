@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.upchiapas.lillia.controllers.HorarioController">
+   <children>
+      <Label layoutX="209.0" layoutY="33.0" prefHeight="26.0" prefWidth="201.0" text="HORARIOS DE RIEGO">
+         <font>
+            <Font name="Comic Sans MS" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnUpdate" layoutX="487.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#btnUpdateOnMouseClicked" text="MOSTRAR" />
+      <TextArea fx:id="txtArHorarios" layoutX="50.0" layoutY="84.0" prefHeight="200.0" prefWidth="518.0" promptText="Aqui se muestran los horarios..." />
+      <Button fx:id="btnModificar" layoutX="80.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#btnModificarOnMouseClicked" text="MODIFICAR" />
+   </children>
+</AnchorPane>
