@@ -56,6 +56,7 @@ public class InventarioController extends javax.swing.JFrame {
     @FXML
     void btnSeccionCOnMouseClicked(MouseEvent event) {
         lblInventario.setText("INVENTARIO SECCION C");
+        lblInventario.setVisible(true);
         Acuatica aux;
         for (int i = 0; i < ListaPlantasC.size() - 1; i++) {
             for (int j = 0; j < ListaPlantasC.size() - 1; j++) {
@@ -67,7 +68,7 @@ public class InventarioController extends javax.swing.JFrame {
             }
         }
         String msj = "";
-        txtArPlantas.setText("ID          Nombre       Cantidad");
+        txtArPlantas.setText("ID          Nombre       Tipo de agua");
         for (int i = 0; i < ListaPlantasC.size(); i++) {
             Planta planta = ListaPlantasC.get(i);
             msj += planta.toString();
@@ -131,6 +132,7 @@ Vivero.setFXML("anadirPlantaAcuatica","AÑADIR PLANTA ACUATICA");
     @FXML
     void btn_seccionBOnMouseClicked(MouseEvent event) {
         lblInventario.setText("INVENTARIO SECCION B");
+        lblInventario.setVisible(true);
         Planta auxB;
         for (int i = 0; i < ListaPlantasB.size() - 1; i++) {
             for (int j = 0; j < ListaPlantasB.size() - 1; j++) {
@@ -155,9 +157,8 @@ Vivero.setFXML("anadirPlantaAcuatica","AÑADIR PLANTA ACUATICA");
 
     @FXML
     void btn_seccionAOnMouseClicked(MouseEvent event) {
-
         lblInventario.setText("INVENTARIO SECCION A");
-        // ListaPlantas=new ArrayList<>();
+        lblInventario.setVisible(true);
         Planta aux;
         for (int i = 0; i < ListaPlantas.size() - 1; i++) {
             for (int j = 0; j < ListaPlantas.size() - 1; j++) {

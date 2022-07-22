@@ -7,26 +7,31 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="343.0" style="-fx-background-color: #13CE66;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.upchiapas.lillia.controllers.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="396.0" prefWidth="348.0" style="-fx-background-color: #13CE66;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.upchiapas.lillia.controllers.HomeController">
    <children>
-      <ImageView fitHeight="257.0" fitWidth="322.0" layoutX="11.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="377.0" fitWidth="336.0" layoutX="4.0" layoutY="10.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../../assets/img/home.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="257.0" fitWidth="322.0" layoutX="11.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../assets/img/Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_inventario" layoutX="11.0" layoutY="303.0" mnemonicParsing="false" onMouseClicked="#btn_inventarioOnMouseClicked" prefHeight="32.0" prefWidth="322.0" style="-fx-background-color: #117B40;" text="REGISTRAR / VER INVENTARIO" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btn_inventario" layoutX="13.0" layoutY="242.0" mnemonicParsing="false" onMouseClicked="#btn_inventarioOnMouseClicked" prefHeight="32.0" prefWidth="322.0" style="-fx-background-color: #117B40;" text="REGISTRAR / VER INVENTARIO" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Bookman Old Style Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="btn_horario" layoutX="11.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#btn_horarioOnMouseClicked" prefHeight="32.0" prefWidth="322.0" style="-fx-background-color: #117B40;" text="HORARIO DE RIEGOS" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="btn_horario" layoutX="13.0" layoutY="183.0" mnemonicParsing="false" onMouseClicked="#btn_horarioOnMouseClicked" prefHeight="32.0" prefWidth="322.0" style="-fx-background-color: #117B40;" text="HORARIO DE RIEGOS" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Bookman Old Style Bold" size="15.0" />
          </font>
       </Button>
-      <Line endX="142.0" layoutX="179.0" layoutY="345.0" startX="-145.0" stroke="WHITE" />
-      <Line endX="142.0" layoutX="173.0" layoutY="293.0" startX="-145.0" stroke="WHITE" />
-      <Button fx:id="btn_salir" layoutX="11.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#btn_salirOnMouseClicked" prefHeight="32.0" prefWidth="322.0" style="-fx-background-color: #117B40;" text="SALIR" textAlignment="CENTER" textFill="WHITE">
+      <Line endX="142.0" layoutX="175.0" layoutY="289.0" startX="-145.0" stroke="WHITE" />
+      <Line endX="142.0" layoutX="173.0" layoutY="232.0" startX="-145.0" stroke="WHITE" />
+      <Button fx:id="btn_salir" layoutX="11.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#btn_salirOnMouseClicked" prefHeight="32.0" prefWidth="322.0" style="-fx-background-color: #117B40;" text="SALIR" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Bookman Old Style Bold" size="15.0" />
          </font>

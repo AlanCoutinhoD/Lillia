@@ -1,8 +1,10 @@
 package com.upchiapas.lillia.controllers;
 
+import com.upchiapas.lillia.models.Acuatica;
 import com.upchiapas.lillia.models.Archivo;
 
 import com.upchiapas.lillia.models.Horario;
+import com.upchiapas.lillia.models.Planta;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -16,7 +18,9 @@ public class HorarioController  extends javax.swing.JFrame {
     Archivo objArchivo = new Archivo();
 
     ArrayList<Horario> ListaHorario = new ArrayList<>();
+    public void initAttributes(){
 
+        }
     public HorarioController(){
         ListaHorario=objArchivo.leerHorario();
         setLocationRelativeTo(null);
