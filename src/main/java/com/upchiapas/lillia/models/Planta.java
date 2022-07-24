@@ -1,7 +1,4 @@
 package com.upchiapas.lillia.models;
-
-import java.util.ArrayList;
-
 public class Planta {
    private  int id;
    private int cantidad;
@@ -11,14 +8,12 @@ public class Planta {
         this.id = id;
     }
 
-    public ArrayList<Planta> setCantidad(int cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-        return null;
     }
 
-    public ArrayList<Planta> setNombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
-        return null;
     }
 
 
@@ -40,6 +35,7 @@ public class Planta {
         this.cantidad=cantidad;
 
     }
+    //Metodo para poder imprimir en el text area
     public String toString() {
         return "\n" + id + "       " + nombre + "       " + cantidad ;
     }

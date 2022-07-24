@@ -1,30 +1,23 @@
 package com.upchiapas.lillia.controllers;
-
-import com.upchiapas.lillia.models.Acuatica;
+import com.upchiapas.lillia.Vivero;
 import com.upchiapas.lillia.models.Archivo;
-
 import com.upchiapas.lillia.models.Horario;
-import com.upchiapas.lillia.models.Planta;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
-
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.List;
-
 public class HorarioController  extends javax.swing.JFrame {
     Archivo objArchivo = new Archivo();
 
-    ArrayList<Horario> ListaHorario = new ArrayList<>();
-    public void initAttributes(){
-
-        }
+    ArrayList<Horario> ListaHorario ;
     public HorarioController(){
         ListaHorario=objArchivo.leerHorario();
         setLocationRelativeTo(null);
     }
+    @FXML
+    private Button btnSalir;
 
     @FXML
     private Button btnModificar;
@@ -70,7 +63,6 @@ if (dia.equals("Lunes")|dia.equals("Martes")|dia.equals("Miercoles")|dia.equals(
 else{
     JOptionPane.showMessageDialog(null,"INCORRECTO NO EXISTE ESE DIA O VERIFIQUE");
 }
-
     ListaHorario=objArchivo.leerHorario();
     }
 
@@ -79,10 +71,14 @@ else{
         txtArHorarios.clear();
         for (Horario horario: ListaHorario) {
             txtArHorarios.appendText(horario.getDia());
-            txtArHorarios.appendText("     "+String.valueOf(horario.getHora()));
-            txtArHorarios.appendText(":"+ String.valueOf(horario.getMinutos())+"\n");
+            txtArHorarios.appendText("     "+(horario.getHora()));
+            txtArHorarios.appendText(":"+ (horario.getMinutos())+"\n");
 
         }
+    }
+    @FXML
+    void btnSalirOnMouseClicked(MouseEvent event) {
+        Vivero.setFXML("lillia-home","HOME");
     }
 
 }

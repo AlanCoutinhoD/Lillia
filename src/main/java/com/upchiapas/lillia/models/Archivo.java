@@ -17,7 +17,7 @@ public class Archivo {
             }
             salida.close();
         }catch (IOException ex){
-            JOptionPane.showMessageDialog(null,"Error");
+            JOptionPane.showMessageDialog(null,"Error archivo no encontrado!");
         } finally {
             salida.close();
         }
@@ -26,24 +26,21 @@ public class Archivo {
         ArrayList<Planta> ListaPlantas = new ArrayList<>();
         try {
             BufferedReader entrada= new BufferedReader(new FileReader("ListaPlantasA.txt"));
-            String s,s2 = new String();
+            String s;
             String nombre;
             int id;
             int cantidad;
             while ((s= entrada.readLine())!=null){
-                s2+=s+ "\n";
                 String[] information = s.split("-");
                 nombre= information[0];
                 id= Integer.parseInt(information[1]);
                 cantidad= Integer.parseInt(information[2]);
                 Planta objPlanta = new Planta(id,nombre,cantidad);
                 ListaPlantas.add(objPlanta);
-
             }
-
             entrada.close();
         }catch (java.io.IOException e){
-            JOptionPane.showMessageDialog(null,"Error Archivo");
+            JOptionPane.showMessageDialog(null,"Error Archivo No Encontrado");
         }
         return ListaPlantas;}
 
@@ -56,7 +53,7 @@ public class Archivo {
             }
             salida.close();
         }catch (IOException ex){
-            JOptionPane.showMessageDialog(null,"Error");
+            JOptionPane.showMessageDialog(null,"Error Archivo No Encontrado");
         } finally {
             salida.close();
         }
@@ -89,13 +86,12 @@ public class Archivo {
         ArrayList<Acuatica> ListaPlantasC = new ArrayList<>();
         try {
             BufferedReader entrada= new BufferedReader(new FileReader("ListaPlantasC.txt"));
-            String s,s2 = new String();
+            String s;
             String nombre;
             int id;
             int cantidad;
             String tipo;
             while ((s= entrada.readLine())!=null){
-                s2+=s+ "\n";
                 String[] information = s.split("-");
                 nombre= information[0];
                 id= Integer.parseInt(information[1]);
@@ -130,12 +126,11 @@ public class Archivo {
         ArrayList<Horario> ListaHorario = new ArrayList<Horario>();
         try {
             BufferedReader entrada= new BufferedReader(new FileReader("ListaHorario.txt"));
-            String s,s2 = new String();
+            String s;
             String dia;
             int hora;
             int minutos;
             while ((s= entrada.readLine())!=null){
-                s2+=s+ "\n";
                 String[] information = s.split("-");
                 dia= information[0];
                 hora= Integer.parseInt(information[2]);

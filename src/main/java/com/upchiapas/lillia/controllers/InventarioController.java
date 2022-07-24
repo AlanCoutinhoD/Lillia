@@ -4,23 +4,17 @@ import com.upchiapas.lillia.models.Acuatica;
 import com.upchiapas.lillia.models.Archivo;
 import com.upchiapas.lillia.models.Planta;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class InventarioController extends javax.swing.JFrame {
     Archivo objArchivo = new Archivo();
-    ArrayList<Planta> ListaPlantas = new ArrayList<>();
-    ArrayList<Planta> ListaPlantasB = new ArrayList<>();
-    ArrayList<Acuatica>ListaPlantasC=new ArrayList<>();
+    ArrayList<Planta> ListaPlantas;
+    ArrayList<Planta> ListaPlantasB;
+    ArrayList<Acuatica>ListaPlantasC;
 
     public InventarioController() {
         ListaPlantas = objArchivo.leer();
@@ -51,7 +45,6 @@ public class InventarioController extends javax.swing.JFrame {
     @FXML
     void btnBuscarOnMouseClicked(MouseEvent event) {
         Vivero.setFXML("busqueda","Busqueda");
-
     }
     @FXML
     void btnSeccionCOnMouseClicked(MouseEvent event) {
@@ -80,48 +73,7 @@ public class InventarioController extends javax.swing.JFrame {
 
         @FXML
     void btnAnadirOnMouseClicked(MouseEvent event) {
-        FXMLLoader loader = new FXMLLoader(Vivero.class.getResource("anadirPlanta.fxml"));
-        Parent root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        AnadirPlantaController controlador = loader.getController();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(scene);
-        stage.showAndWait();
-        Planta p = controlador.getPlanta();
-        int id = 1;
-        if (controlador.getSeccion().equals("A")) {
-            for (int i = 0; i < ListaPlantas.size(); i++) {
-                if (ListaPlantas.get(i).getId() == id) {
-                    System.out.println("Este id ya existe!");
-                    id += 1;
-                    i = -1;
-                }
-
-            }
-            System.out.println("te meti" + id);
-            p.setId(id);
-            this.ListaPlantas.add(p);
-            objArchivo.escribir(ListaPlantas);
-        } else if (controlador.getSeccion().equals("B")) {
-            for (int i = 0; i < ListaPlantasB.size(); i++) {
-                if (ListaPlantasB.get(i).getId() == id) {
-                    System.out.println("Este id ya existe!");
-                    id += 1;
-                    i = -1;
-                }
-
-            }
-            System.out.println("te meti" + id);
-            p.setId(id);
-            this.ListaPlantasB.add(p);
-            objArchivo.escribirB(ListaPlantasB);
-        }
+        Vivero.setFXML("anadirPlanta","AÑADIR PLANTA TERRESTRE");
     }
     @FXML
     void btnAnadirAcuaticaOnMouseClicked(MouseEvent event) {
@@ -143,7 +95,6 @@ Vivero.setFXML("anadirPlantaAcuatica","AÑADIR PLANTA ACUATICA");
                 }
             }
         }
-        /////////
         String msj = "";
         txtArPlantas.setText("ID          Nombre       Cantidad");
         for (int i = 0; i < ListaPlantasB.size(); i++) {
