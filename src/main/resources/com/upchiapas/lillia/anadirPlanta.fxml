@@ -25,6 +25,6 @@
             <Font name="Comic Sans MS" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSeccion" layoutX="141.0" layoutY="116.0" promptText="Example: A,B,C" />
+      <TextField fx:id="txtSeccion" layoutX="141.0" layoutY="116.0" promptText="Example: A,B" />
    </children>
 </AnchorPane>

@@ -11,7 +11,7 @@ public class Archivo {
     public void escribir(ArrayList<Planta>Plantas){
         PrintWriter salida= null;
         try {
-            salida = new PrintWriter(new BufferedWriter(new FileWriter("ListaPlantasA.txt")));
+            salida = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/assets.txt/ListaPlantasA.txt")));
             for (int i=0; i< Plantas.size(); i++){
                 salida.println(Plantas.get(i).getNombre() + "-" + Plantas.get(i).getId()+ "-"+ Plantas.get(i).getCantidad());
             }
@@ -25,7 +25,7 @@ public class Archivo {
     public  ArrayList<Planta> leer(){
         ArrayList<Planta> ListaPlantas = new ArrayList<>();
         try {
-            BufferedReader entrada= new BufferedReader(new FileReader("ListaPlantasA.txt"));
+            BufferedReader entrada= new BufferedReader(new FileReader("src/main/resources/assets.txt/ListaPlantasA.txt"));
             String s;
             String nombre;
             int id;
@@ -47,7 +47,7 @@ public class Archivo {
     public void escribirB(ArrayList<Planta>PlantasB){
         PrintWriter salida= null;
         try {
-            salida = new PrintWriter(new BufferedWriter(new FileWriter("ListaPlantasB.txt")));
+            salida = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/assets.txt/ListaPlantasB.txt")));
             for (int i=0; i< PlantasB.size(); i++){
                 salida.println(PlantasB.get(i).getNombre() + "-" + PlantasB.get(i).getId()+ "-"+ PlantasB.get(i).getCantidad());
             }
@@ -61,7 +61,7 @@ public class Archivo {
     public  ArrayList<Planta> leerB(){
         ArrayList<Planta> ListaPlantasB = new ArrayList<>();
         try {
-            BufferedReader entrada= new BufferedReader(new FileReader("ListaPlantasB.txt"));
+            BufferedReader entrada= new BufferedReader(new FileReader("src/main/resources/assets.txt/ListaPlantasB.txt"));
             String s,s2 = new String();
             String nombre;
             int id;
@@ -85,7 +85,7 @@ public class Archivo {
     public  ArrayList<Acuatica> leerC(){
         ArrayList<Acuatica> ListaPlantasC = new ArrayList<>();
         try {
-            BufferedReader entrada= new BufferedReader(new FileReader("ListaPlantasC.txt"));
+            BufferedReader entrada= new BufferedReader(new FileReader("src/main/resources/assets.txt/ListaPlantasC.txt"));
             String s;
             String nombre;
             int id;
@@ -110,7 +110,7 @@ public class Archivo {
     public void escribirC(ArrayList<Acuatica>PlantasC){
         PrintWriter salida= null;
         try {
-            salida = new PrintWriter(new BufferedWriter(new FileWriter("ListaPlantasC.txt")));
+            salida = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/assets.txt/ListaPlantasC.txt")));
             for (int i=0; i< PlantasC.size(); i++){
                 salida.println(PlantasC.get(i).getNombre() + "-" + PlantasC.get(i).getId()+ "-"+PlantasC.get(i).getTipo()+"-"+ PlantasC.get(i).getCantidad());
             }
@@ -125,7 +125,7 @@ public class Archivo {
     public  ArrayList<Horario> leerHorario(){
         ArrayList<Horario> ListaHorario = new ArrayList<Horario>();
         try {
-            BufferedReader entrada= new BufferedReader(new FileReader("ListaHorario.txt"));
+            BufferedReader entrada= new BufferedReader(new FileReader("src/main/resources/assets.txt/ListaHorario.txt"));
             String s;
             String dia;
             int hora;
@@ -151,7 +151,7 @@ public class Archivo {
     public void escribirHorario(ArrayList<Horario>ListaHorario){
         PrintWriter salida= null;
         try {
-            salida = new PrintWriter(new BufferedWriter(new FileWriter("ListaHorario.txt")));
+            salida = new PrintWriter(new BufferedWriter(new FileWriter("src/main/resources/assets.txt/ListaHorario.txt")));
             for (int i=0; i< ListaHorario.size(); i++){
                 salida.println(ListaHorario.get(i).getDia() + "-" + ListaHorario.get(i).getMinutos()+ "-"+ ListaHorario.get(i).getHora());
             }
